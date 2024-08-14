@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.8), rgba(233, 236, 239, 0.8)); /* Subtle gradient */
+            color: #343a40;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal overflow due to animations */
+        }
+        .container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Enhanced 3D shadow */
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #007bff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Enhanced text shadow */
+            animation: rgbAnimation 5s infinite; /* RGB color animation */
+        }
+        @keyframes rgbAnimation {
+            0% {
+                color: red;
+            }
+            25% {
+                color: yellow;
+            }
+            50% {
+                color: green;
+            }
+            75% {
+                color: cyan;
+            }
+            100% {
+                color: magenta;
+            }
+        }
+        .result-box {
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: linear-gradient(145deg, #ffffff, #e2e2e2); /* Soft gradient */
+            box-shadow: inset 5px 5px 15px rgba(0,0,0,0.1), 5px 5px 20px rgba(0,0,0,0.2); /* Inner and outer shadows */
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out; /* Fade-in animation */
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .result-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 0, 150, 0.2), rgba(0, 255, 255, 0.2));
+            opacity: 0.5;
+            transform: rotate(-30deg);
+            z-index: 0;
+            animation: rotateBg 6s linear infinite; /* Rotating gradient background */
+        }
+        @keyframes rotateBg {
+            from {
+                transform: rotate(-30deg);
+            }
+            to {
+                transform: rotate(330deg);
+            }
+        }
+        .result-box h2 {
+            color: #007bff;
+            font-size: 2rem;
+            z-index: 1;
+            position: relative;
+        }
+        .result-box p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            z-index: 1;
+            position: relative;
+        }
+        .result-box span {
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Data Successfully Submitted</h1>
+        <div class="result-box mt-4">
+            <h2 class="text-center" th:text="${fname}"></h2>
+            <p><strong>Last Name:</strong> <span th:text="${lname}"></span></p>
+            <p><strong>Phone:</strong> <span th:text="${phone}"></span></p>
+            <p><strong>Password:</strong> <span th:text="${pass}"></span></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

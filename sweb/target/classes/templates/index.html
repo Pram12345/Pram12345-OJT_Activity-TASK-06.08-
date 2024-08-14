@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Subtle gradient background */
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: #007bff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+            animation: rgbAnimation 5s infinite; /* RGB color animation */
+        }
+        @keyframes rgbAnimation {
+            0% {
+                color: red;
+            }
+            25% {
+                color: yellow;
+            }
+            50% {
+                color: green;
+            }
+            75% {
+                color: cyan;
+            }
+            100% {
+                color: magenta;
+            }
+        }
+        .container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Deep shadow for 3D effect */
+            max-width: 600px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: scale(1.03); /* Slight zoom effect on hover */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+        .form-control {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Focus shadow effect */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+        .btn-floating {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn-facebook {
+            background-color: #4267B2; /* Facebook color */
+            border: none;
+        }
+        .btn-google {
+            background-color: #DB4437; /* Google color */
+            border: none;
+        }
+        .btn-twitter {
+            background-color: #1DA1F2; /* Twitter color */
+            border: none;
+        }
+        .btn-github {
+            background-color: #333; /* GitHub color */
+            border: none;
+        }
+        .btn-floating:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+        }
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 0, 150, 0.3), rgba(0, 255, 255, 0.3));
+            opacity: 0.6;
+            transform: rotate(-30deg);
+            z-index: 0;
+            animation: rotateBg 8s linear infinite; /* Rotating background animation */
+        }
+        @keyframes rotateBg {
+            from {
+                transform: rotate(-30deg);
+            }
+            to {
+                transform: rotate(330deg);
+            }
+        }
+        .form-container {
+            position: relative;
+            z-index: 1; /* Ensure it is above the animated background */
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="text-center py-4">Welcome to Spring Boot</h1>
+<div class="container">
+    <div class="animated-bg"></div> <!-- Animated background layer -->
+    <div class="form-container">
+        <div class="text-center p-4 mb-4">
+            <h2 class="fs-3">Register Page</h2>
+        </div>
+        <form action="/register" method="post">
+            <div class="row mb-4">
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" id="form3Example1" name="fname" class="form-control" />
+                        <label class="form-label" for="form3Example1">First name</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div data-mdb-input-init class="form-outline">
+                        <input type="text" id="form3Example2" name="lname" class="form-control" />
+                        <label class="form-label" for="form3Example2">Last name</label>
+                    </div>
+                </div>
+            </div>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form3Example3" name="mail" class="form-control" />
+                <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+            
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" id="form3Example4" name="phone" class="form-control" />
+                <label class="form-label" for="form3Example4">Phone</label>
+            </div>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="password" id="form3Example5" name="pass" class="form-control" />
+                <label class="form-label" for="form3Example5">Password</label>
+            </div>
+
+            <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                <label class="form-check-label" for="form2Example33">
+                    Subscribe to our newsletter
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+            <div class="text-center">
+                <p>or sign up with:</p>
+                <button data-mdb-ripple-init type="button" class="btn btn-floating btn-facebook mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                </button>
+                <button data-mdb-ripple-init type="button" class="btn btn-floating btn-google mx-1">
+                    <i class="fab fa-google"></i>
+                </button>
+                <button data-mdb-ripple-init type="button" class="btn btn-floating btn-twitter mx-1">
+                    <i class="fab fa-twitter"></i>
+                </button>
+                <button data-mdb-ripple-init type="button" class="btn btn-floating btn-github mx-1">
+                    <i class="fab fa-github"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/js/main.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+</body>
+</html>
